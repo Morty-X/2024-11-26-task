@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let sum = 0, max = 0, min = 100, count = 0;
+        while (true) {
+            let num = +prompt('请输入学生成绩1-100 (0表示输入结束)')
+            if (num === 0) break
+            if (num < 0 || num > 100) {
+                alert(`输入数据不合理`)
+            } else {
+                count++
+                sum += num
+                max = max > num ? max : num;
+                min = min < num ? min : num
+            }
+        }
+        document.write(`平均分：${sum / count}<br>
+        最高分：${max}<br>最低分：${min}
+        `)
+    </script>
+</body>
+
+</html>

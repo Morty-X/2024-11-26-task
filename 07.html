@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+
+<body>
+    <script>
+        let n = +prompt('请输入一个整数')
+        let f1 = 1, f2 = 1, c
+        document.write(f1 + '\t' + f2 + '\t')
+        for (let i = 3; i <= n; i++) {
+            c = f1 + f2
+            document.write(c + '\t')
+            f1 = f2
+            f2 = c
+            if (i % 4 == 0) {
+                document.write('<br>')
+            }
+        }
+    </script>
+</body>
+
+</html>

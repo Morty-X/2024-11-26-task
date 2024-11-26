@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03</title>
+</head>
+
+<body>
+    <script>
+        let scores = +prompt('请输入学生成绩（0-100）：')
+        if (scores < 0 || scores > 100) {
+            alert(`输入的成绩不合法`)
+        } else {
+            if (scores >= 90 && scores <= 100) {
+                alert('A')
+            } else if (scores >= 80) {
+                alert('B')
+            } else if (scores >= 70) {
+                alert('C')
+            } else if (scores >= 60) {
+                alert('D')
+            } else {
+                alert('E')
+            }
+        }
+    </script>
+</body>
+
+</html>
