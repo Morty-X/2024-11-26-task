@@ -12,18 +12,28 @@
         let a = +prompt('请输入三角形的第1条边')
         let b = +prompt('请输入三角形的第2条边')
         let c = +prompt('请输入三角形的第3条边')
+
+
+
+
         // 任意两边之和大于第三边
+        let condition1 = (a + b) > c && (a + c) > b && (b + c) > a
         // 任意两边之差小于第三边
+        let condition2 = Math.abs(a - b) < c && Math.abs(a - c) < b && Math.abs(b - c) < a
+
+        // 直角三角形的判定条件
+        let conditionRAngle = (a ** 2 + b ** 2 === c ** 2) || (a ** 2 + c ** 2 === b ** 2) || (b ** 2 + c ** 2 === a ** 2)
+
         if (a <= 0 || b <= 0 || c <= 0) {
             alert('三角形的边长不能小于等于0,不能构成三角形')
-        } else if ((a + b) < c || (a + c) < b || (b + c) < a) {
+        } else if (!(condition1 && condition2)) {
             alert('三角形的边长不符合条件，不能构成三角形')
         } else {
             if (a === b && b == c) {
                 alert(`是等边三角形`)
-            } else if (a === b || b === c) {
+            } else if (a === b || b === c || a == c) {
                 alert(`是等腰三角形`)
-            } else if ((a ** 2 + b ** 2 === c ** 2) || (a ** 2 + c ** 2 === b ** 2) || (b ** 2 + c ** 2 === a ** 2)) {
+            } else if (conditionRAngle) {
                 alert(`是直角三角形`)
             } else {
                 alert('是普通三角形')

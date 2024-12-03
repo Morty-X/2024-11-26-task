@@ -10,7 +10,7 @@
 <body>
     <script>
         let year = +prompt('请输入一个年份(如：2024)：')
-        year % 4 === 0 && year % 100 !== 0 ? alert(`${year}年是闰年`) : alert(`${year}年不是闰年`)
+            (year >= 0) && (year % 4 === 0 && year % 100 !== 0) ? alert(`${year}年是闰年`) : alert(`${year}年不是闰年`)
         /*  if (year % 4 === 0 && year % 100 !== 0) {
              alert(`${year}年是闰年`)
          } else {

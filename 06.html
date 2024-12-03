@@ -9,11 +9,10 @@
 
 <body>
     <script>
-        let n = +prompt(`请输入一个整数n`)
-        let flag//判断是否为素数
+        let n = +prompt(`请输入一个大于1的整数n`)
+        let flag
         for (let i = 2; i <= n; i++) {
             flag = true
-            // [2,i)中找到能被 i 整除的数字，flag=false
             for (let j = 2; j < i; j++) {
                 if (i % j === 0) {
                     flag = false
@@ -24,6 +23,36 @@
                 document.write(i + '\t')
             }
         }
+
+        // 打印n以内素数
+        function primeList(n) {
+            let res = []
+            if (typeof n !== "number") {
+                alert('type error!')
+                return
+            } else if (n < 0) {
+                alert('num range error!')
+                return
+            }
+            for (let i = 2; i < n; i++) {
+                // 默认是素数
+                let flag = true
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        // 不是素数
+                        flag = false
+                        break
+                    }
+                }
+                if (flag) {
+                    res.push(i)
+                }
+            }
+            return res.join(',')
+        }
+
+
+        console.log(primeList(n));
 
     </script>
 </body>
